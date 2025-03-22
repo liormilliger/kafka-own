@@ -30,8 +30,8 @@ def delivery_callback(err, msg):
             topic=msg.topic(), key=msg.key().decode('utf-8'), value=msg.value().decode('utf-8')))
 
 def produce_message(producer):
-    user_ids = ['user1', 'user2', 'user3']
-    products = ['itemA', 'itemB', 'itemC']
+    user_ids = ['user1', 'user2', 'user3', 'user4', 'user5', 'user6']
+    products = ['itemA', 'itemB', 'itemC', 'itemD', 'itemE', 'itemF']
 
     user_id = choice(user_ids)
     product = choice(products)
@@ -59,4 +59,4 @@ if __name__ == "__main__":
     while True:
         produce_message(producer)  # Produce a message to service1 topic
         consume_message(consumer)    # Consume messages from service2 topic
-        time.sleep(60)              # Wait for 1 minute before producing the next message
+        time.sleep(10)              # Wait for 1 minute before producing the next message
